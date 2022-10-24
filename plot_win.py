@@ -99,6 +99,6 @@ def create_win(input):
 	
 	
 if __name__ == "__main__":
-	print("result.txtの保存先（フォルダ）を入力してください")
+	print("result.txtの保存先を入力してください")
 	input = input()
 	create_win(input)
