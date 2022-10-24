@@ -14,7 +14,7 @@ requirements.txtを参考にしてください．
 
 ## Setup
 1. git cloneでローカルに複製
-1. 
+1. pip install -r requirements.txtで必要なファイルをインストール
 
 ## Usage
 使い方。なるべく具体的に書く。サンプルも書く
