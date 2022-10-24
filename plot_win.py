@@ -6,7 +6,7 @@ import time
 
 class Application(tk.Frame):
 	
-	def __init__(self,master = None):
+	def __init__(self,input,master = None):
 		super().__init__(master)
 		self.pack()
 		
@@ -44,17 +44,17 @@ class Application(tk.Frame):
 
 		
 		# イメージ作成
-		self.img_speed = tk.PhotoImage(file="image/速度.png")
-		self.img_variability = tk.PhotoImage(file="image/変動性.png")
-		self.img_symmetry = tk.PhotoImage(file="image/対称性.png")
+		self.img_speed = tk.PhotoImage(file="./image/速度.png")
+		self.img_variability = tk.PhotoImage(file="./image/変動性.png")
+		self.img_symmetry = tk.PhotoImage(file="./image/対称性.png")
 
-		self.img_speed_point = tk.PhotoImage(file="image/背景.png")
-		self.img_variability_point = tk.PhotoImage(file="image/背景.png")
-		self.img_symmetry_point = tk.PhotoImage(file="image/背景.png")
+		self.img_speed_point = tk.PhotoImage(file="./image/背景.png")
+		self.img_variability_point = tk.PhotoImage(file="./image/背景.png")
+		self.img_symmetry_point = tk.PhotoImage(file="./image/背景.png")
 
-		self.img_score = tk.PhotoImage(file="image/総合点.png")
-		self.img_evaluation = tk.PhotoImage(file="image/総合評価.png")
-		self.img_index = tk.PhotoImage(file="image/評価ランク.png")
+		self.img_score = tk.PhotoImage(file="./image/総合点.png")
+		self.img_evaluation = tk.PhotoImage(file="./image/総合評価.png")
+		self.img_index = tk.PhotoImage(file="./image/評価ランク.png")
 
 
 		# キャンバスにイメージを表示
@@ -72,7 +72,9 @@ class Application(tk.Frame):
 		
 		
 		#結果のファイルを読み込み
-		file = open('result.txt', 'r', encoding='UTF-8')
+
+		filename = os.path.join("./",input,"result.txt")
+		file = open(filename, 'r', encoding='UTF-8')
 		datalist = file.readlines()
 		
 
@@ -90,11 +92,13 @@ class Application(tk.Frame):
 		evaluation_lbl.place(x=970, y=450)
 
 		
-def create_win():
+def create_win(input):
 	win = tk.Tk()
-	app = Application(master=win)
+	app = Application(input,master=win)
 	app.mainloop()
 	
 	
 if __name__ == "__main__":
-	create_win()
+	print("result.txtの保存先（フォルダ）を入力してください")
+	input = input()
+	create_win(input)
