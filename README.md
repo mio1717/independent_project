@@ -13,8 +13,8 @@
 requirements.txtを参考にしてください．
 
 ## Setup
-1. git cloneでローカルに複製．
-  git clone git@github.com:mio1717/independent_project.git or git clone https://github.com/mio1717/independent_project.git
+1. git cloneでローカルに複製．  
+git clone git@github.com:mio1717/independent_project.git or git clone https://github.com/mio1717/independent_project.git
 2. pip install -r requirements.txtで必要なファイルをインストール．
 以上でセットアップ完了です．エラーが出た際は調べた後質問してください．
 
