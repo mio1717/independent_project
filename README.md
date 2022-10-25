@@ -2,20 +2,20 @@
 
 # independent_project 
 学生自主企画研究 使用コード一覧
-complement.py：Openposeの.jsonをcsv化，その後各指標の計算，result.txtの出力を行う．まずはじめにこのコードを実行する．
-plot_win.py：sora氏作成コード．結果の出力を行う．complement.pyの後に実行する．
-JSONtoCSV：jsonをcsvに変更するプログラム．実行する必要はない．
-sample：complement.pyを実行後sampleと打つと簡単な結果（sora氏）が見られます．
-image：plot_win.py用の画像，弄らないでください．
-requirements.py：必要なライブラリ（色々書いてあるので必要なところのみ抜粋してください）
+- complement.py：Openposeの.jsonをcsv化，その後各指標の計算，result.txtの出力を行う．まずはじめにこのコードを実行する．
+- plot_win.py：sora氏作成コード．結果の出力を行う．complement.pyの後に実行する．
+- JSONtoCSV：jsonをcsvに変更するプログラム．実行する必要はない．
+- sample：complement.pyを実行後sampleと打つと簡単な結果（sora氏）が見られます．
+- image：plot_win.py用の画像，弄らないでください．
+- requirements.py：必要なライブラリ（色々書いてあるので必要なところのみ抜粋してください）
 
 ## Dependency
 requirements.txtを参考にしてください．
 
 ## Setup
 1. git cloneでローカルに複製．
-  - git clone git@github.com:mio1717/independent_project.git or git clone https://github.com/mio1717/independent_project.git
-1. pip install -r requirements.txtで必要なファイルをインストール．
+  git clone git@github.com:mio1717/independent_project.git or git clone https://github.com/mio1717/independent_project.git
+2. pip install -r requirements.txtで必要なファイルをインストール．
 以上でセットアップ完了です．エラーが出た際は調べた後質問してください．
 
 ## Usage
