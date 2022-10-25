@@ -14,18 +14,20 @@ requirements.txtを参考にしてください．
 
 ## Setup
 1. git cloneでローカルに複製．  
-git clone git@github.com:mio1717/independent_project.git or git clone https://github.com/mio1717/independent_project.git
-2. pip install -r requirements.txtで必要なファイルをインストール．
+git clone git@github.com:mio1717/independent_project.git  
+or  
+git clone https://github.com/mio1717/independent_project.git
+2. pip install -r requirements.txtで必要なファイルをインストール．  
 以上でセットアップ完了です．エラーが出た際は調べた後質問してください．
 
 ## Usage
 1. Openposeでjsonの入ったファイルを作成．
 2. complement.pyを実行．
-3. 実行の際にフォルダ名を聞かれるのでフォルダ名を打つ．
-  - ※フォルダは現在のディレクトリの真下においてください．名前は何でも良いですが，sub1など英数字にしておくのが無難です．
-4. 実行すると，ターミナルに結果と利用したフォルダ内にresult.txtが出力される．
-5. plot_win.pyを実行．
-6. 結果がグラフィカルに出力される．
+3. 実行の際にフォルダ名を聞かれるのでフォルダ名を打つ．  
+※フォルダは現在のディレクトリの真下においてください．名前は何でも良いですが，sub1など英数字にしておくのが無難です．
+5. 実行すると，ターミナルに結果と利用したフォルダ内にresult.txtが出力される．
+6. plot_win.pyを実行．
+7. 結果がグラフィカルに出力される．  
 もしかしたら，plot_win.pyを実行するとバグるかもしれません（sora氏が画像の名前を日本語にしているため文字化けする恐れがある）
 その場合はローカルで画像の名前を変更して再度実行してみてください
 
