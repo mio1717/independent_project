@@ -1,4 +1,4 @@
-<img src="https://coco-senior.jp/M2kRW38c/wp-content/uploads/2021/05/%E5%A7%BF%E5%8B%A2%E3%81%8C%E6%82%AA%E3%81%8F%E6%AD%A9%E8%A1%8C%E3%81%AB%E4%B8%8D%E5%AE%89%E3%81%AE%E3%81%82%E3%82%8B%E9%AB%98%E9%BD%A2%E5%A5%B3%E6%80%A7%E3%81%AE%E5%86%99%E7%9C%9F.jpeg" width="500">
+<img src="https://coco-senior.jp/M2kRW38c/wp-content/uploads/2021/05/%E5%A7%BF%E5%8B%A2%E3%81%8C%E6%82%AA%E3%81%8F%E6%AD%A9%E8%A1%8C%E3%81%AB%E4%B8%8D%E5%AE%89%E3%81%AE%E3%81%82%E3%82%8B%E9%AB%98%E9%BD%A2%E5%A5%B3%E6%80%A7%E3%81%AE%E5%86%99%E7%9C%9F.jpeg" height="300">
 
 # independent_project 
 学生自主企画研究 使用コード一覧
