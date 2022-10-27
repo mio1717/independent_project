@@ -2,7 +2,7 @@
 
 # independent_project 
 学生自主企画研究 使用コード一覧
-- <span style="color: red;">complement.py</span>：Openposeの.jsonをcsv化，その後各指標の計算，result.txtの出力を行う．まずはじめにこのコードを実行する．
+- <span style="color: red; ">complement.py</span>：Openposeの.jsonをcsv化，その後各指標の計算，result.txtの出力を行う．まずはじめにこのコードを実行する．
 - plot_win.py：sora氏作成コード．結果の出力を行う．complement.pyの後に実行する．
 - JSONtoCSV：jsonをcsvに変更するプログラム．実行する必要はない．
 - sample：complement.pyを実行後sampleと打つと簡単な結果（sora氏）が見られます．
