@@ -83,8 +83,12 @@ class Application(tk.Frame):
 		
 		#結果のファイルを読み込み
 		filepath = self.dirdialog_clicked()
-		file = open(filepath, 'r', encoding='UTF-8')
-		datalist = file.readlines()
+		try:
+			file = open(filepath, 'r', encoding='UTF-8')
+			datalist = file.readlines()
+		except FileNotFoundError as e:
+			print("空のファイルを選択しています")
+		
 		
 
 		# 点数を生成・表示
