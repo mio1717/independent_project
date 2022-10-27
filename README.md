@@ -8,7 +8,7 @@
 - JSONtoCSV：jsonをcsvに変更するプログラム．complement.pyを実行すると自動で実行される．
 - sample：complement.pyを実行後sampleと打つと簡単な結果（sora氏のデータ）が見られます．
 - image：plot_win.py用の画像が入ったフォルダ．
-- requirements.txt：必要なライブラリが記載されたテキストファイル．
+- requirements.txt：必要なライブラリが記載されたテキストファイル．  
 
 :::note info
 requirements.txt
