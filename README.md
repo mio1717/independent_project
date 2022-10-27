@@ -52,7 +52,7 @@ pip install -r requirements.txt
 Openpose，Python3
 
 ## Authors
-M2：ik，sora，eureka，bobobo
+M2：ik，sora，eureka，bobobo  
 B2：reon
 
 ## References
