@@ -5,7 +5,7 @@
 - complement.py：Openposeの.jsonをcsv化，各指標の計算，result.txtの出力を行う．最初に実行する．
 - plot_win.py：result.txtの出力をグラフィカルに行う．complement.pyの後に実行する．
 
-> **ote**
+> **Note**
 > 基本的に上記2つのプログラムだけを弄るようにしてください．
 
 ## 実行しないプログラム
