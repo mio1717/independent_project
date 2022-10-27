@@ -48,8 +48,8 @@ pip install -r requirements.txt
 5. 結果を表示をクリック．
 6. 解析に利用したフォルダ内に存在するresult.txtを選択する．  
 
-## License
-特になし
+## Tech
+Openpose，Python3
 
 ## Authors
 ik,sora,eureka,bobobo,reon
