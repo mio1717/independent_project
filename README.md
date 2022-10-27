@@ -52,7 +52,8 @@ pip install -r requirements.txt
 Openpose，Python3
 
 ## Authors
-ik,sora,eureka,bobobo,reon
+M2：ik，sora，eureka，bobobo
+B2：reon
 
 ## References
 https://www.creact.co.jp/wp-content/uploads/2019/04/Gait_Analyser_%E6%AD%A9%E8%A1%8C%E3%83%91%E3%83%95%E3%82%A9%E3%83%BC%E3%83%9E%E3%83%B3%E3%82%B9%E3%81%AE%E8%A9%B3%E8%BF%B0.pdf
