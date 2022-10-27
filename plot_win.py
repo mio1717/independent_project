@@ -1,19 +1,26 @@
 import tkinter as tk
+from tkinter.tix import DirSelectDialog
 from PIL import Image, ImageTk
 import os
 import time
+import tkinter.filedialog
 
 
 class Application(tk.Frame):
 	
-	def __init__(self,input,master = None):
+	def __init__(self,master = None):
 		super().__init__(master)
 		self.pack()
 		
 		#ウィンドウを大きさ・タイトル
-		master.geometry("1440x900") #横x縦
-		master.title("診断結果：")
+		monitor_height = master.winfo_screenheight() #モニターの高さを取得
+		monitor_width = master.winfo_screenwidth() #モニターの幅を取得
 
+		master.geometry(str(monitor_width) + "x" + str(monitor_height)) #横x縦
+		master.title("診断結果")
+
+		std_x = (monitor_width-1200)/2 #横が1200より大きい前提
+		std_y = (monitor_height-800)/2 #縦が800より大きい前提
 		
 		# キャンバス作成
 		speed = tk.Canvas(master, height=200, width=400) #縦x横 #速度の画像を表示するキャンバス
@@ -26,36 +33,33 @@ class Application(tk.Frame):
 
 		score = tk.Canvas(master, height=300, width=400) #総合点を表示するキャンバス
 		evaluation = tk.Canvas(master, height=300, width=400) #総合評価を表示するキャンバス
-		index = tk.Canvas(master, height=200, width=1200) #評価ランクの説明を表示するキャンバス
-		
+		index = tk.Canvas(master, height=200, width=1200) #評価ランクの説明を表示するキャンバス	
 		
 		# キャンバス表示
-		speed.place(x=100, y=50)
-		variability.place(x=100, y=250)
-		symmetry.place(x=100, y=450)
+		speed.place(x=std_x, y=std_y+4) #位置が合わなかったので微調整したよ
+		variability.place(x=std_x, y=std_y+200)
+		symmetry.place(x=std_x, y=std_y+400+2) #位置が合わなかったので微調整したよ
 
-		speed_point.place(x=500, y=50)
-		variability_point.place(x=500, y=250)
-		symmetry_point.place(x=500, y=450)
+		speed_point.place(x=std_x+400, y=std_y)
+		variability_point.place(x=std_x+400, y=std_y+200)
+		symmetry_point.place(x=std_x+400, y=std_y+400)
 
-		score.place(x=900, y=50)
-		evaluation.place(x=900, y=350)
-		index.place(x=100, y=650)
-
+		score.place(x=std_x+800, y=std_y)
+		evaluation.place(x=std_x+800, y=std_y+300)
+		index.place(x=std_x, y=std_y+600)
 		
 		# イメージ作成
-		self.img_speed = tk.PhotoImage(file="./image/速度.png")
-		self.img_variability = tk.PhotoImage(file="./image/変動性.png")
-		self.img_symmetry = tk.PhotoImage(file="./image/対称性.png")
+		self.img_speed = tk.PhotoImage(file="./image/speed.png")
+		self.img_variability = tk.PhotoImage(file="./image/variability.png")
+		self.img_symmetry = tk.PhotoImage(file="./image/symmetry.png")
 
-		self.img_speed_point = tk.PhotoImage(file="./image/背景.png")
-		self.img_variability_point = tk.PhotoImage(file="./image/背景.png")
-		self.img_symmetry_point = tk.PhotoImage(file="./image/背景.png")
+		self.img_speed_point = tk.PhotoImage(file="./image/back.png")
+		self.img_variability_point = tk.PhotoImage(file="./image/back.png")
+		self.img_symmetry_point = tk.PhotoImage(file="./image/back.png")
 
-		self.img_score = tk.PhotoImage(file="./image/総合点.png")
-		self.img_evaluation = tk.PhotoImage(file="./image/総合評価.png")
-		self.img_index = tk.PhotoImage(file="./image/評価ランク.png")
-
+		self.img_score = tk.PhotoImage(file="./image/total_score.png")
+		self.img_evaluation = tk.PhotoImage(file="./image/total_rank.png")
+		self.img_index = tk.PhotoImage(file="./image/rating_rank.png")
 
 		# キャンバスにイメージを表示
 		speed.create_image(10, 2, image=self.img_speed, anchor=tk.NW)
@@ -70,35 +74,54 @@ class Application(tk.Frame):
 		evaluation.create_image(0, 5, image=self.img_evaluation, anchor=tk.NW)
 		index.create_image(10, 2, image=self.img_index, anchor=tk.NW)
 		
+		# ボタン作成
+		self.btn = tk.Button(master, text='結果を表示', command=lambda:self.btn_click(std_x,std_y))
+		self.btn.place(x=monitor_width/2-50, y=monitor_height-std_y)
+
+	# ボタンのクリックイベント
+	def btn_click(self,std_x,std_y):
 		
 		#結果のファイルを読み込み
-
-		filename = os.path.join("./",input,"result.txt")
-		file = open(filename, 'r', encoding='UTF-8')
+		filepath = self.dirdialog_clicked()
+		file = open(filepath, 'r', encoding='UTF-8')
 		datalist = file.readlines()
-		
 
 		# 点数を生成・表示
-		speed_lbl = tk.Label(text=datalist[0].replace("\n", ""), foreground='#1E90FF',background="#B0E2FF", font=("メイリオ",128,"bold"), height=1, width=3, anchor=tk.CENTER) 
-		speed_lbl.place(x=560, y=70)
-		variability_lbl = tk.Label(text=datalist[1].replace("\n", ""), foreground='#1E90FF',background="#B0E2FF", font=("メイリオ",128,"bold"), height=1, width=3, anchor=tk.CENTER) 
-		variability_lbl.place(x=560, y=270)
-		symmetry_lbl = tk.Label(text=datalist[2].replace("\n", ""), foreground='#1E90FF',background="#B0E2FF", font=("メイリオ",128,"bold"), height=1, width=3, anchor=tk.CENTER) 
-		symmetry_lbl.place(x=560, y=470)
+		score_font = 81
+		total_font = 91
+		score_x = 490
+		total_x = 870 
 
-		score_lbl = tk.Label(text=datalist[3].replace("\n", ""), foreground='#FF8247', font=("メイリオ",128,"bold"), height=1, width=3, anchor=tk.CENTER) 
-		score_lbl.place(x=970, y=150)
-		evaluation_lbl = tk.Label(text=datalist[4].replace("\n", ""), foreground='#FF8247', font=("メイリオ",128,"bold"), height=1, width=3, anchor=tk.CENTER) 
-		evaluation_lbl.place(x=970, y=450)
+		self.speed_lbl = tk.Label(text=datalist[0].replace("\n", ""), foreground='#1E90FF',background="#B0E2FF", font=("メイリオ",score_font,"bold"), height=1, width=3, anchor=tk.CENTER) 
+		self.speed_lbl.place(x=std_x+score_x, y=std_y+30)
+		self.variability_lbl = tk.Label(text=datalist[1].replace("\n", ""), foreground='#1E90FF',background="#B0E2FF", font=("メイリオ",score_font,"bold"), height=1, width=3, anchor=tk.CENTER) 
+		self.variability_lbl.place(x=std_x+score_x, y=std_y+230)
+		self.symmetry_lbl = tk.Label(text=datalist[2].replace("\n", ""), foreground='#1E90FF',background="#B0E2FF", font=("メイリオ",score_font,"bold"), height=1, width=3, anchor=tk.CENTER) 
+		self.symmetry_lbl.place(x=std_x+score_x, y=std_y+430)
+
+		self.score_lbl = tk.Label(text=datalist[3].replace("\n", ""), foreground='#FF8247', font=("メイリオ",total_font,"bold"), height=1, width=3, anchor=tk.CENTER) 
+		self.score_lbl.place(x=std_x+total_x, y=std_y+95)
+		self.evaluation_lbl = tk.Label(text=datalist[4].replace("\n", ""), foreground='#FF8247', font=("メイリオ",total_font,"bold"), height=1, width=3, anchor=tk.CENTER) 
+		self.evaluation_lbl.place(x=std_x+total_x, y=std_y+390)
+	
+		#数値を変更
+		self.speed_lbl['text'] = datalist[0].replace("\n", "")
+		self.variability_lbl['text'] = datalist[1].replace("\n", "")
+		self.symmetry_lbl['text'] = datalist[2].replace("\n", "")
+		self.score_lbl['text'] = datalist[3].replace("\n", "")
+		self.evaluation_lbl['text'] = datalist[4].replace("\n", "")
+
+	# フォルダ指定の関数
+	def dirdialog_clicked(self):
+		filename = tk.filedialog.askopenfilename()
+		return filename
 
 		
-def create_win(input):
+def create_win():
 	win = tk.Tk()
-	app = Application(input,master=win)
+	app = Application(master=win)
 	app.mainloop()
 	
 	
 if __name__ == "__main__":
-	print("result.txtの保存先を入力してください")
-	input = input()
-	create_win(input)
+	create_win()
