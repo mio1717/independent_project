@@ -9,6 +9,7 @@
 - sample：complement.pyを実行後sampleと打つと簡単な結果（sora氏のデータ）が見られます．
 - image：plot_win.py用の画像が入ったフォルダ．
 - requirements.txt：必要なライブラリが記載されたテキストファイル．
+
 :::note info
 requirements.txt
 不要なライブラリ情報も記載されているため，必要な部分のみを選んでインストールしてください．
