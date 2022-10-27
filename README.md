@@ -32,7 +32,10 @@ git clone https://github.com/mio1717/independent_project.git
 > **Note**
 > 上記のどちらかのコマンドを実行してください．git環境が無い方は，Download ZIPをしてください．
 
-2. pip install -r requirements.txtで必要なファイルをインストール．  
+2. 必要なライブラリをインストール．
+```python
+pip install -r requirements.txt  
+```
 以上でセットアップ完了です．エラーが出た際は調べた後質問してください．
 
 ## Usage
