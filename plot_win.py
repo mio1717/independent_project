@@ -85,6 +85,7 @@ class Application(tk.Frame):
 		filepath = self.dirdialog_clicked()
 		file = open(filepath, 'r', encoding='UTF-8')
 		datalist = file.readlines()
+		
 
 		# 点数を生成・表示
 		score_font = 81
@@ -113,7 +114,7 @@ class Application(tk.Frame):
 
 	# フォルダ指定の関数
 	def dirdialog_clicked(self):
-		filename = tk.filedialog.askopenfilename()
+		filename = tk.filedialog.askopenfilename(filetypes=[("テキストファイル", "*.txt")],initialdir = "./")
 		return filename
 
 		
