@@ -6,7 +6,7 @@
 - plot_win.py：result.txtの出力をグラフィカルに行う．complement.pyの後に実行する．
 
 > **Note**
-> 基本的に上記2つのプログラムだけを弄るようにしてください．
+> 基本的に上記2つのプログラムだけを実行するようにしてください．
 
 ## 実行しないプログラム
 - JSONtoCSV：jsonをcsvに変更するプログラム．complement.pyを実行すると自動で実行される．
@@ -22,7 +22,9 @@ requirements.txtを参考にしてください．
 
 ## Setup
 1. git cloneでローカルに複製．  
-git clone git@github.com:mio1717/independent_project.git  
+```端末
+git clone git@github.com:mio1717/independent_project.git
+``` 
 or  
 git clone https://github.com/mio1717/independent_project.git
 2. pip install -r requirements.txtで必要なファイルをインストール．  
