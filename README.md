@@ -25,10 +25,13 @@ requirements.txtを参考にしてください．
 ```console
 git clone git@github.com:mio1717/independent_project.git
 ```  
-or  
 ```console
 git clone https://github.com/mio1717/independent_project.git
 ```
+
+> **Note**
+> 上記のどちらかのコマンドを実行してください．git環境が無い方は，Download ZIPをしてください．
+
 2. pip install -r requirements.txtで必要なファイルをインストール．  
 以上でセットアップ完了です．エラーが出た際は調べた後質問してください．
 
