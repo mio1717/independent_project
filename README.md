@@ -15,6 +15,11 @@ requirements.txt
 不要なライブラリ情報も記載されているため，必要な部分のみを選んでインストールしてください．  
 :::  
 
+:::note info
+インフォメーション
+infoは省略可能です。
+:::
+
 ## Dependency
 requirements.txtを参考にしてください．
 
