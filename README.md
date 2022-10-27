@@ -22,10 +22,10 @@ requirements.txtを参考にしてください．
 
 ## Setup
 1. git cloneでローカルに複製．  
-```:ssh
+```console:ssh
 git clone git@github.com:mio1717/independent_project.git
 ```  
-```:https:
+```console:HTML
 git clone https://github.com/mio1717/independent_project.git
 ```
 2. pip install -r requirements.txtで必要なファイルをインストール．  
