@@ -10,13 +10,8 @@
 - image：plot_win.py用の画像が入ったフォルダ．
 - requirements.txt：必要なライブラリが記載されたテキストファイル．  
 
-:::note info  
-requirements.txt  
-不要なライブラリ情報も記載されているため，必要な部分のみを選んでインストールしてください．  
-:::  
-
-> **Note**
-> This is a note
+> **Warning**
+> requirements.txtには不要なライブラリも記載されています．適宜抽出してください．
 
 ## Dependency
 requirements.txtを参考にしてください．
