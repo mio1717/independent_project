@@ -21,10 +21,11 @@
 requirements.txtを参考にしてください．
 
 ## Setup
-1. git cloneでローカルに複製．  
+1. git cloneでローカルに複製． 
 ```console
 git clone git@github.com:mio1717/independent_project.git
 ```  
+or  
 ```console
 git clone https://github.com/mio1717/independent_project.git
 ```
